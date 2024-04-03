@@ -1,4 +1,4 @@
-import ChuckQuote from "./components/chuckQuote";
+import ChuckQuote from "@/components/chuckQuote";
 
 export default function Home() {
   /*async function handleOnHelloClick(){
