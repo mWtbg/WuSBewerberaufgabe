@@ -1,4 +1,5 @@
 import ChuckQuote from "@/components/chuckQuote";
+import Image from 'next/image'
 
 export default function Home() {
   /*async function handleOnHelloClick(){
@@ -15,8 +16,14 @@ export default function Home() {
 
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1> Hiiii</h1>
+    <main className="flex min-h-screen items-center justify-between p-24">
+      <Image
+        src="/wus.svg"
+        width={1000}
+        height ={760}
+        alt="Image of Chuck Norris"
+        className=""
+      />
       <ChuckQuote />
     </main>
   );

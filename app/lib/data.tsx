@@ -12,7 +12,6 @@ export async function getVisitorCount() {
 
 // Check if Visitorcout exists, if yes increment it. Otherwise create a new entry
 export async function icrementVisitorCount() {
-  console.log("besucht oh yeah")
   try {
     const existingCount = await prisma.visitorCount.findUnique({
       where: { id: 1 }, 
