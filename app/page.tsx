@@ -16,15 +16,17 @@ export default function Home() {
 
 
   return (
-    <main className="flex min-h-screen items-center justify-between p-24">
-      <Image
-        src="/wus.svg"
-        width={1000}
-        height ={760}
-        alt="Image of Chuck Norris"
-        className=""
-      />
-      <ChuckQuote />
+    <main className="">
+      <div className="h-screen flex min-h-screen items-end justify-between ">
+        <Image
+          src="/chuck.png"
+          width={700}
+          height ={450}
+          alt="Image of Chuck Norris"
+          className="shrink w-[100vh]"
+        />
+        <ChuckQuote />
+      </div>
     </main>
   );
 }

@@ -18,9 +18,12 @@ export default function ChuckQuote() {
         setQuote(chuckResponse.value)
     }
 
-    return (<>
+    return (<div className="grow min-w-48 h-full text-lg flex gap-50 flex-wrap flex-col items-center">
+    <div className="grow shrink"></div>
     <p>{quote}</p>
+    <div className="grow shrink"></div>
     <button onClick={handleOnClick}>Chuck Norris says</button>
-    </>
+    <div className="h-80 shrink"></div>
+    </div>
     );
 }
