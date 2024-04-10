@@ -1,20 +1,18 @@
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from "@prisma/client";
 
-// daten die nach restart da sein seollen + crud funktionen für diese daten
+const prisma = new PrismaClient();
 
-const prisma = new PrismaClient()
-
-// Returns VisitorCont from the database
+// Returns VisitorCount from the database
 export async function getVisitorCount() {
   const visitorCount = await prisma.visitorCount.findFirst();
   return visitorCount;
 }
 
-// Check if Visitorcout exists, if yes increment it. Otherwise create a new entry
+// Check if VisitorCount exists, if yes increment it. Otherwise create a new entry
 export async function icrementVisitorCount() {
   try {
     const existingCount = await prisma.visitorCount.findUnique({
-      where: { id: 1 }, 
+      where: { id: 1 },
     });
 
     if (existingCount) {
@@ -31,8 +29,7 @@ export async function icrementVisitorCount() {
         },
       });
     }
-} catch (error) {
-  console.error('Error incrementing visitor count:', error);
-}
-
+  } catch (error) {
+    console.error("Error incrementing visitor count:", error);
+  }
 }
