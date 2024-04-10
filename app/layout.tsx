@@ -17,7 +17,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   icrementVisitorCount(); // Update VisitorCount, when page is built
 
   return (

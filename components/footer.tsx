@@ -4,7 +4,6 @@ import { getVisitorCount } from "@/app/lib/data";
 import { VisitorCount } from "@prisma/client";
 import React, { useEffect } from "react";
 
-
 interface VistorCount {
   id: number;
   count: number;
