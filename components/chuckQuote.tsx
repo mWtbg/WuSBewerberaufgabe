@@ -57,8 +57,8 @@ export default function ChuckQuote() {
   }, []);
 
   return (
-    <div className="grow h-full text-lg flex gap-50 flex-wrap flex-col items-center">
-      <div className="grow-[2]"></div>
+    <div className="min-h-[70vh] sm:w-full md:min-h-[50vh] lg:grow lg:h-full lg:p-0 p-5  text-lg flex gap-50 flex-wrap flex-col items-center">
+      <div className="lg:grow-[2] grow"></div>
       <blockquote className="flex flex-col">
         <Quotes quote={quote} isfirstQuote={true} />
         <p className="px-9 break-words w-full font-medium text-2xl">{quote}</p>
@@ -73,7 +73,7 @@ export default function ChuckQuote() {
           Get a Chuck Norris Quote
         </button>
       </div>
-      <div className="h-2/5 shrink"></div>
+      <div className="lg:h-2/5 md:h-32 shrink"></div>
     </div>
   );
 }

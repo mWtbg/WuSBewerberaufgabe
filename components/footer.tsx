@@ -27,7 +27,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-zinc-900 flex flex-row justify-between items-center text-white min-h-14 px-5">
-      <p className="text-lg p-2">Visitor Count: {currentCount}</p>
+      <p className="text-lg p-2">Total visits: {currentCount}</p>
       <p className="font-light"> Bewerberaufgabe Miriam Würtemberger</p>
     </footer>
   );
