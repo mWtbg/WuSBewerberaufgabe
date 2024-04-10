@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 
+// Interface for API response
 interface ChuckResponse {
   icon_url: string;
   id: string;
@@ -9,14 +10,23 @@ interface ChuckResponse {
   value: string;
 }
 
-function Quotes({quote, isfirstQuote}:{quote: string|undefined, isfirstQuote:boolean}) {
+// Big quotes that are shown around the Chuck Norris quote
+function Quotes({
+  quote,
+  isfirstQuote,
+}: {
+  quote: string | undefined;
+  isfirstQuote: boolean;
+}) {
   if (!quote) {
     return null;
   }
-
   return (
     <svg
-      className={'text-end w-8 h-8 text-zinc-900 mb-1 '+ ( isfirstQuote ?  "": "self-end")}
+      className={
+        "text-end w-8 h-8 text-zinc-900 mb-1 " +
+        (isfirstQuote ? "" : "self-end")
+      }
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       fill="currentColor"
@@ -27,16 +37,24 @@ function Quotes({quote, isfirstQuote}:{quote: string|undefined, isfirstQuote:boo
   );
 }
 
+// Element that shows quote and button to get new quote
 export default function ChuckQuote() {
   const [quote, setQuote] = React.useState<string>();
 
+  // Get new Quote from Api and update qoute state
   async function handleOnClick() {
     const response = await fetch(
       "https://api.chucknorris.io/jokes/random?category=dev"
     );
     const chuckResponse = (await response.json()) as ChuckResponse;
     setQuote(chuckResponse.value);
+    console.log("hi");
   }
+
+  //get first quote on pageload
+  useEffect(() => {
+    handleOnClick();
+  }, []);
 
   return (
     <div className="grow h-full text-lg flex gap-50 flex-wrap flex-col items-center">
